@@ -3,6 +3,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000;
 var app = express();
 
 //stored partials (pieces of a page) need to be registered
@@ -65,6 +66,7 @@ app.get('/bad', (request, response) => {
 });
 
 //The expressapp is always listening on a port
-app.listen(3000, () => {
-    console.log("Server is up on port 3000");
+//port for heroku using environment variable
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`);
 });
