@@ -57,6 +57,12 @@ app.get('/about', (request, response) => {
     });
 });
 
+app.get('/projects', (request, response) => {
+    response.render('projects.hbs', {
+        pageTitle: "Portfolio"
+    });
+})
+
 //the send function is used to send data to a static page.
 app.get('/bad', (request, response) => {
     response.send({
